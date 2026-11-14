@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#171717">
+  <title>CuteDesign | Wear Your Style</title>
+  <meta name="description" content="Shop your favourite fashion at CuteDesign. Discover stylish clothing and accessories.">
+  <style>
+    :root{--ink:#171717;--muted:#777;--cream:#f7f4ef;--paper:#fff;--accent:#c58b65;--line:#e9e4de}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+    button,input,select{font:inherit}button{cursor:pointer}.topbar{background:var(--ink);color:#fff;text-align:center;padding:9px 12px;font-size:12px;letter-spacing:1.2px}
+    header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}
+    .nav{max-width:1200px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-family:Georgia,serif;font-size:27px;font-weight:bold;letter-spacing:2px;text-decoration:none;color:var(--ink)}
+    .logo span{color:var(--accent)}.navlinks{display:flex;gap:25px}.navlinks a{color:#333;text-decoration:none;font-size:13px}.navlinks a:hover{color:var(--accent)}
+    .nav-actions{display:flex;gap:10px;align-items:center}.icon-btn{border:1px solid var(--line);background:#fff;padding:10px 13px;border-radius:3px}
+    .hero{min-height:510px;background:linear-gradient(90deg,rgba(0,0,0,.63),rgba(0,0,0,.08)),url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85') center/cover;display:flex;align-items:center;color:white}
+    .hero-inner{max-width:1200px;width:100%;margin:auto;padding:70px 24px}.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:12px;color:#e9c9b2}
+    .hero h1{font:normal clamp(42px,7vw,76px)/1.05 Georgia,serif;max-width:600px;margin:18px 0}.hero p{max-width:460px;line-height:1.8;color:#eee}
+    .btn{display:inline-block;background:var(--ink);color:#fff;border:1px solid var(--ink);padding:13px 22px;text-decoration:none;font-size:12px;letter-spacing:1px;text-transform:uppercase;border-radius:2px}
+    .btn.light{background:#fff;color:var(--ink);border-color:#fff}.btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+    .section{max-width:1200px;margin:auto;padding:70px 22px}.section-head{text-align:center;margin-bottom:30px}.section-head small{color:var(--accent);letter-spacing:2px;text-transform:uppercase}.section-head h2{font:normal 36px Georgia,serif;margin:10px 0}.section-head p{color:var(--muted);font-size:14px}
+    .categories{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.cat{position:relative;height:190px;overflow:hidden;background:var(--cream);cursor:pointer}.cat img{width:100%;height:100%;object-fit:cover;transition:.4s}.cat:hover img{transform:scale(1.06)}.cat strong{position:absolute;bottom:14px;left:14px;background:#fff;padding:10px 14px;font:18px Georgia,serif}
+    .shop-tools{display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between;margin:25px 0}.shop-tools input{flex:1;min-width:190px}.field{padding:12px;border:1px solid var(--line);background:#fff;outline:none}.field:focus{border-color:var(--accent)}
+    .filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:white;padding:10px 14px;font-size:12px}.filter.active,.filter:hover{background:var(--ink);color:white}
+    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}.product{border:1px solid var(--line);background:white;position:relative}.product-img{height:270px;position:relative;background:var(--cream);overflow:hidden}.product-img img{width:100%;height:100%;object-fit:cover;transition:.35s}.product:hover img{transform:scale(1.04)}.tag{position:absolute;top:12px;left:12px;background:#fff;padding:7px 9px;font-size:10px;letter-spacing:1px}
+    .product-info{padding:15px}.product-info h3{font:18px Georgia,serif;margin:0 0 8px}.product-info p{font-size:12px;color:var(--muted);margin:0 0 12px}.price{font-weight:bold;font-size:14px}.product-actions{display:flex;gap:8px;margin-top:13px}.small-btn{flex:1;padding:10px 7px;border:1px solid var(--ink);background:white;font-size:11px;text-transform:uppercase}.small-btn.primary{background:var(--ink);color:white}.small-btn:hover{background:var(--accent);border-color:var(--accent);color:white}
+    .about{background:var(--cream)}.about-inner{max-width:1200px;margin:auto;padding:65px 22px;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.about img{width:100%;height:350px;object-fit:cover}.about h2{font:normal 38px Georgia,serif}.about p{color:#666;line-height:1.9;font-size:14px}
+    footer{background:#171717;color:#fff;padding:45px 22px}.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}.footer-inner p{color:#bbb;font-size:13px;line-height:1.8}.footer-inner a{color:#fff}.copyright{text-align:center;color:#888;border-top:1px solid #333;margin:30px auto 0;padding-top:20px;font-size:11px}
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:50;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.modal-box{background:white;width:min(720px,100%);max-height:90vh;overflow:auto;padding:25px;position:relative}.close{position:absolute;right:15px;top:12px;border:0;background:none;font-size:26px}.modal-product{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:20px}.modal-product img{width:100%;height:330px;object-fit:cover}.modal-product p{line-height:1.7;color:#666;font-size:14px}
+    .cart-list{margin:20px 0}.cart-row{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:12px 0;font-size:14px}.qty button{border:1px solid var(--line);background:white;padding:3px 9px;margin:0 4px}.cart-total{font-size:18px;font-weight:bold;text-align:right;margin:20px 0}
+    .admin-panel{background:#faf8f5;border:1px solid var(--line);padding:20px;margin-top:30px;display:none}.admin-panel.show{display:block}.admin-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.admin-grid input,.admin-grid select{width:100%}.admin-note{font-size:12px;color:#777;line-height:1.6}
+    .empty{text-align:center;color:#777;padding:35px;grid-column:1/-1}.whatsapp-float{position:fixed;right:18px;bottom:18px;background:#168b4b;color:#fff;text-decoration:none;padding:14px 18px;border-radius:30px;z-index:25;font-size:13px;box-shadow:0 4px 15px #0002}
+    @media(max-width:850px){.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(2,1fr)}.navlinks{gap:12px}.about-inner{grid-template-columns:1fr}.product-img{height:240px}}
+    @media(max-width:560px){.nav{padding:13px}.logo{font-size:22px}.navlinks{display:none}.hero{min-height:440px}.hero-inner{padding:55px 22px}.section{padding:50px 15px}.products{gap:10px}.product-img{height:190px}.product-info{padding:11px}.product-info h3{font-size:16px}.product-actions{flex-direction:column}.categories{gap:9px}.cat{height:145px}.modal-product{grid-template-columns:1fr}.modal-product img{height:260px}.admin-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="topbar">WELCOME TO CUTEDESIGN — STYLE THAT SPEAKS FOR YOU</div>
+  <header>
+    <nav class="nav">
+      <a class="logo" href="#">CUTE<span>DESIGN</span></a>
+      <div class="navlinks"><a href="#home">Home</a><a href="#categories">Categories</a><a href="#shop">Shop</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <div class="nav-actions">
+        <button class="icon-btn" onclick="openCart()">Cart (<span id="cartCount">0</span>)</button>
+        <button class="icon-btn" onclick="toggleAdmin()">Admin</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home"><div class="hero-inner">
+      <div class="eyebrow">New season · New style</div>
+      <h1>Wear your style.<br>Own your story.</h1>
+      <p>Discover stylish fashion pieces selected to make every day feel special. Find your look at CuteDesign.</p>
+      <a class="btn light" href="#shop">Shop collection</a>
+    </div></section>
+
+    <section class="section" id="categories">
+      <div class="section-head"><small>Explore the store</small><h2>Shop by category</h2><p>Find something that matches your style.</p></div>
+      <div class="categories">
+        <div class="cat" onclick="chooseCategory('Women')"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=700&q=80" alt="Women's fashion"><strong>Women</strong></div>
+        <div class="cat" onclick="chooseCategory('Men')"><img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80" alt="Men's fashion"><strong>Men</strong></div>
+        <div class="cat" onclick="chooseCategory('Shoes')"><img src="https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=700&q=80" alt="Shoes"><strong>Shoes</strong></div>
+        <div class="cat" onclick="chooseCategory('Accessories')"><img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=700&q=80" alt="Accessories"><strong>Accessories</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="shop">
+      <div class="section-head"><small>Our collection</small><h2>Featured products</h2><p>Browse the latest products from CuteDesign.</p></div>
+      <div class="filters" id="filters">
+        <button class="filter active" onclick="chooseCategory('All')">All</button>
+        <button class="filter" onclick="chooseCategory('Women')">Women</button>
+        <button class="filter" onclick="chooseCategory('Men')">Men</button>
+        <button class="filter" onclick="chooseCategory('Shoes')">Shoes</button>
+        <button class="filter" onclick="chooseCategory('Accessories')">Accessories</button>
+      </div>
+      <div class="shop-tools">
+        <input class="field" id="searchInput" placeholder="Search products..." oninput="renderProducts()">
+        <select class="field" id="sortSelect" onchange="renderProducts()"><option value="default">Sort: Featured</option><option value="low">Price: Low to high</option><option value="high">Price: High to low</option><option value="az">Name: A to Z</option></select>
+      </div>
+      <div class="products" id="productGrid"></div>
+
+      <div class="admin-panel" id="adminPanel">
+        <h3>Store manager — Add a product</h3>
+        <p class="admin-note">Demo admin area: products are saved in this browser using localStorage. It is not password-protected and is not a secure online admin system. Do not enter private information here.</p>
+        <div class="admin-grid">
+          <input class="field" id="pName" placeholder="Product name">
+          <input class="field" id="pPrice" type="number" min="1" placeholder="Price in TSh">
+          <select class="field" id="pCategory"><option>Women</option><option>Men</option><option>Shoes</option><option>Accessories</option></select>
+          <input class="field" id="pImage" placeholder="Image URL (https://...)">
+          <input class="field" id="pDesc" placeholder="Short description">
+          <button class="btn" onclick="addProduct()">Add product</button>
+        </div>
+        <p class="admin-note">To remove a product, use the Remove button on its product card. Changes are stored only on this device/browser.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about"><div class="about-inner">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1000&q=85" alt="CuteDesign fashion collection">
+      <div><small style="color:#b77e59;letter-spacing:2px">ABOUT CUTEDESIGN</small><h2>Style made for you.</h2><p>CuteDesign is your fashion destination for discovering pieces that help you express your personality. We believe great style should feel comfortable, confident and uniquely yours.</p><a class="btn" href="#shop">Explore products</a></div>
+    </div></section>
+  </main>
+
+  <footer id="contact"><div class="footer-inner">
+    <div><a class="logo" href="#" style="color:white">CUTE<span>DESIGN</span></a><p>Wear your style. Own your story.</p></div>
+    <div><strong>Contact us</strong><p>Phone / WhatsApp: <a href="https://wa.me/255792272076" target="_blank" rel="noopener">0792272076</a><br>Orders are received through WhatsApp.</p></div>
+    <div><strong>Quick links</strong><p><a href="#home">Home</a><br><a href="#shop">Shop products</a><br><a href="#about">About us</a></p></div>
+  </div><div class="copyright">© <span id="year"></span> CuteDesign. All rights reserved.</div></footer>
+
+  <a class="whatsapp-float" href="https://wa.me/255792272076?text=Hello%20CuteDesign%2C%20I%20would%20like%20to%20make%20an%20order." target="_blank" rel="noopener">WhatsApp us</a>
+
+  <div class="modal" id="productModal" onclick="if(event.target===this)closeModal()"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><div id="modalContent"></div></div></div>
+  <div class="modal" id="cartModal" onclick="if(event.target===this)closeCart()"><div class="modal-box"><button class="close" onclick="closeCart()">×</button><h2 style="font:30px Georgia,serif">Your shopping cart</h2><div id="cartItems" class="cart-list"></div><div id="cartTotal" class="cart-total"></div><button class="btn" onclick="checkout()">Order via WhatsApp</button></div></div>
+
+  <script>
+    const defaultProducts = [
+      {id:1,name:"Elegant Summer Dress",price:45000,category:"Women",image:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",desc:"A beautiful and comfortable dress for everyday style."},
+      {id:2,name:"Classic Men's Outfit",price:55000,category:"Men",image:"https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=800&q=80",desc:"A smart, modern outfit for a confident look."},
+      {id:3,name:"Women's Fashion Look",price:65000,category:"Women",image:"https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",desc:"A stylish fashion piece for special occasions."},
+      {id:4,name:"Casual Sneakers",price:70000,category:"Shoes",image:"https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80",desc:"Comfortable sneakers for your everyday activities."},
+      {id:5,name:"Luxury Wrist Watch",price:85000,category:"Accessories",image:"https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=800&q=80",desc:"A timeless accessory to complete your outfit."},
+      {id:6,name:"Men's Casual Shirt",price:40000,category:"Men",image:"https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=800&q=80",desc:"A clean and comfortable shirt for daily wear."},
+      {id:7,name:"Stylish Handbag",price:60000,category:"Accessories",image:"https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80",desc:"A versatile handbag with a modern finish."},
+      {id:8,name:"Women's Heels",price:75000,category:"Shoes",image:"https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=80",desc:"Elegant heels for a polished look."}
+    ];
+    let products = JSON.parse(localStorage.getItem("cuteProducts") || "null") || defaultProducts;
+    let cart = [];
+    let activeCategory = "All";
+    const money = n => "TSh " + Number(n).toLocaleString("en-US");
+    function saveProducts(){localStorage.setItem("cuteProducts",JSON.stringify(products))}
+    function renderProducts(){
+      const term=document.getElementById("searchInput").value.toLowerCase();
+      let list=products.filter(p=>(activeCategory==="All"||p.category===activeCategory)&&(`${p.name} ${p.category} ${p.desc}`).toLowerCase().includes(term));
+      const sort=document.getElementById("sortSelect").value;
+      if(sort==="low")list.sort((a,b)=>a.price-b.price);
+      if(sort==="high")list.sort((a,b)=>b.price-a.price);
+      if(sort==="az")list.sort((a,b)=>a.name.localeCompare(b.name));
+      document.querySelectorAll(".filter").forEach(b=>b.classList.toggle("active",b.textContent===activeCategory||(activeCategory==="All"&&b.textContent==="All")));
+      document.getElementById("productGrid").innerHTML=list.length?list.map(p=>`
+        <article class="product"><div class="product-img"><img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}" onerror="this.src='https://placehold.co/600x700/f7f4ef/777?text=CuteDesign'"><span class="tag">${escapeHTML(p.category)}</span></div>
+        <div class="product-info"><h3>${escapeHTML(p.name)}</h3><p>${escapeHTML(p.desc)}</p><div class="price">${money(p.price)}</div>
+        <div class="product-actions"><button class="small-btn" onclick="showDetails(${p.id})">View details</button><button class="small-btn primary" onclick="addToCart(${p.id})">Add to cart</button></div>
+        <button class="small-btn" style="width:100%;margin-top:7px" onclick="removeProduct(${p.id})">Remove product</button></div></article>`).join(""):'<div class="empty">No products found. Try another search.</div>';
+    }
+    function escapeHTML(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+    function chooseCategory(c){activeCategory=c;document.getElementById("shop").scrollIntoView({behavior:"smooth"});renderProducts()}
+    function showDetails(id){const p=products.find(x=>x.id===id);if(!p)return;document.getElementById("modalContent").innerHTML=`<div class="modal-product"><img src="${escapeHTML(p.image)}" alt="${escapeHTML(p.name)}"><div><small>${escapeHTML(p.category)}</small><h2 style="font:30px Georgia,serif">${escapeHTML(p.name)}</h2><h3>${money(p.price)}</h3><p>${escapeHTML(p.desc)}</p><button class="btn" onclick="addToCart(${p.id});closeModal()">Add to cart</button></div></div>`;document.getElementById("productModal").classList.add("show")}
+    function closeModal(){document.getElementById("productModal").classList.remove("show")}
+    function addToCart(id){const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,qty:1});updateCart();alert("Product added to your cart.")}
+    function updateCart(){document.getElementById("cartCount").textContent=cart.reduce((s,x)=>s+x.qty,0)}
+    function openCart(){renderCart();document.getElementById("cartModal").classList.add("show")}
+    function closeCart(){document.getElementById("cartModal").classList.remove("show")}
+    function renderCart(){const el=document.getElementById("cartItems");if(!cart.length){el.innerHTML='<p>Your cart is empty.</p>';document.getElementById("cartTotal").textContent="";return}
+      el.innerHTML=cart.map(x=>{const p=products.find(z=>z.id===x.id);return p?`<div class="cart-row"><div><strong>${escapeHTML(p.name)}</strong><br>${money(p.price)} × ${x.qty}</div><div class="qty"><button onclick="changeQty(${p.id},-1)">−</button>${x.qty}<button onclick="changeQty(${p.id},1)">+</button></div></div>`:""}).join("");
+      document.getElementById("cartTotal").textContent="Total: "+money(cart.reduce((s,x)=>{const p=products.find(z=>z.id===x.id);return s+(p?p.price*x.qty:0)},0))}
+    function changeQty(id,n){const item=cart.find(x=>x.id===id);if(!item)return;item.qty+=n;if(item.qty<=0)cart=cart.filter(x=>x.id!==id);updateCart();renderCart()}
+    function checkout(){if(!cart.length){alert("Your cart is empty.");return}let lines=cart.map(x=>{const p=products.find(z=>z.id===x.id);return p?`${p.name} x ${x.qty} = ${money(p.price*x.qty)}`:""}).filter(Boolean);let total=cart.reduce((s,x)=>{const p=products.find(z=>z.id===x.id);return s+(p?p.price*x.qty:0)},0);let msg="Hello CuteDesign! I want to place this order:\n"+lines.join("\n")+"\nTotal: "+money(total)+"\nPlease confirm availability and delivery details.";window.open("https://wa.me/255792272076?text="+encodeURIComponent(msg),"_blank");}
+    function toggleAdmin(){document.getElementById("adminPanel").classList.toggle("show");document.getElementById("adminPanel").scrollIntoView({behavior:"smooth",block:"nearest"})}
+    function addProduct(){const name=document.getElementById("pName").value.trim(),price=Number(document.getElementById("pPrice").value),category=document.getElementById("pCategory").value,image=document.getElementById("pImage").value.trim(),desc=document.getElementById("pDesc").value.trim();if(!name||price<=0||!image){alert("Please enter product name, valid price and image URL.");return}if(!/^https?:\/\//i.test(image)){alert("Image URL must start with https:// or http://");return}products.unshift({id:Date.now(),name,price,category,image,desc:desc||"Contact us for more details."});saveProducts();renderProducts();["pName","pPrice","pImage","pDesc"].forEach(id=>document.getElementById(id).value="");alert("Product added successfully.")}
+    function removeProduct(id){if(!confirm("Are you sure you want to remove this product?"))return;products=products.filter(p=>p.id!==id);saveProducts();renderProducts()}
+    document.getElementById("year").textContent=new Date().getFullYear();
+    renderProducts();
+  </script>
+</body>
+</html>
